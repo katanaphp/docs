@@ -1,2 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@theme {
+    --color-primary: oklch(54.6% 0.245 262.881);
+    --color-primary-dark: oklch(42.4% 0.199 265.638);
+    --color-light: oklch(86.9% 0.022 252.894);
+    --color-lightest: oklch(98.4% 0.003 247.858);
+}
