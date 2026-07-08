@@ -9,12 +9,15 @@ if (!is_dir(CACHE_DIR) && !mkdir(CACHE_DIR)) {
     die("Cannot create cache directory");
 }
 
-
-$response = Route::dispatch();
-
-if ($response === null) {
-    http_response_code(404);
-    echo '404';
+if (php_sapi_name() === 'cli') {
+    $console->run();
 } else {
-    echo $response;
+    $response = Route::dispatch();
+
+    if ($response === null) {
+        http_response_code(404);
+        echo '404';
+    } else {
+        echo $response;
+    }
 }
