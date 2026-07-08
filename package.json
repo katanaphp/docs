@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently 'php -S 0.0.0.0:8080 -t . ./web/index.php' 'vite'",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.20",
     "typescript": "~6.0.2",
+    "concurrently": "^10.0.3",
     "vite": "^8.1.0"
   },
   "dependencies": {
