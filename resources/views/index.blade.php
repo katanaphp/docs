@@ -7,32 +7,128 @@
     ];
 @endphp
 <x-layout class="max-w-full!" title="Katana">
-    <header class="border-b">
-        <x-container class="py-4 flex justify-between prose">
-            <a href="/" class="font-bold">Katana</a>
-            <div class="flex gap-4">
-                @foreach ($links as $link)
-                    <a href="{{ $link['link'] }}">
-                        {{ $link['label'] }}
-                    </a>
-                @endforeach
+    <nav class="w-full border-b border-brand-200 bg-white">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="text-xl font-bold text-brand-900 tracking-tight">Katana</a>
+            <div class="flex items-center gap-6">
+                <a href="https://katanaphp.dev/docs"
+                    class="text-sm text-brand-500 hover:text-brand-900 transition-colors">Docs</a>
+                <a href="https://github.com/katanaphp"
+                    class="text-sm text-brand-500 hover:text-brand-900 transition-colors"><i
+                        class="fa-brands fa-github mr-1"></i>GitHub</a>
             </div>
-        </x-container>
-    </header>
+        </div>
+    </nav>
 
-    <x-section class="text-center">
-        <x-container class="prose prose-h1:text-5xl prose-h1:lg:text-7xl max-w-3xl! space-y-6!">
-            <h1>
-                Render Blade in any <span class="text-[#474A8A]">PHP</span> project
+    <x-section class="bg-brand-50">
+        <x-container class="text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-900 leading-tight tracking-tight">
+                Portable blade templates<br>in any PHP project
             </h1>
-            <p class="lead">
-                Katana is an independent implementation of the Blade template language which enables you to use your
-                favourite template language in any PHP projects, without dependencies on Laravel.
+            <p class="mt-6 text-lg md:text-xl text-brand-500 max-w-2xl mx-auto leading-relaxed">
+                Katana is an independent implementation of the Blade template language, bringing you the comfort of
+                Blade templates in any PHP project.
             </p>
-            <div class="flex gap-4 justify-center">
-                <!-- <x-button variant="primary">Get started</x-button> -->
-                <x-button link="https://github.com/katanaphp/blade">View on GitHub</x-button>
+            <div class="mt-10 flex items-center justify-center gap-4 flex-wrap">
+                <a href="https://katanaphp.dev/docs"
+                    class="inline-flex items-center px-6 py-3 bg-brand-900 text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors">
+                    <i class="fa-regular fa-book mr-2"></i>View Documentation
+                </a>
+                <a href="https://github.com/katanaphp"
+                    class="inline-flex items-center px-6 py-3 border border-brand-300 text-brand-700 text-sm font-medium rounded-lg hover:bg-brand-100 transition-colors">
+                    <i class="fa-brands fa-github mr-2"></i>View on GitHub
+                </a>
             </div>
         </x-container>
     </x-section>
+
+    <x-section>
+        <x-container>
+            <h2 class="text-3xl font-bold text-brand-900 text-center tracking-tight">Why choose Katana?</h2>
+            <p class="mt-4 text-brand-500 text-center max-w-xl mx-auto">Everything you need to adopt Blade outside of
+                Laravel.</p>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @php
+                    $features = [
+                        [
+                            'icon' => '8x',
+                            'title' => 'Wide PHP Support',
+                            'description' => 'Supports all PHP 8.x versions used on approximately 77% of all deployments, making it easier to adopt in both new and legacy projects.'
+                        ],
+                        [
+                            'icon' => 'fa-solid fa-vial',
+                            'title' => 'Extensively Tested',
+                            'description' => 'Large test suite with end-to-end tests verifying actual HTML output at 95% coverage.',
+                        ],
+                        [
+                            'icon' => 'fa-solid fa-feather',
+                            'title' => '<10 KB',
+                            'description' => 'A lightweight, fully independent implementation of Blade with zero dependencies on Laravel.'
+                        ],
+                        [
+                            'icon' => 'fa-solid fa-code',
+                            'title' => 'Full Laravel Parity',
+                            'description' => 'Same directives, components, and interface as Laravel Blade so you can port code to and from Laravel effortlessly.'
+                        ],
+                        [
+                            'icon' => 'fa-solid fa-shield-halved',
+                            'title' => 'Actively Maintained',
+                            'description' => 'The only independent Blade implementation actively maintained as of 2025.'
+                        ],
+                        [
+                            'icon' => 'fa-solid fa-bolt',
+                            'title' => 'Blade Anywhere',
+                            'description' => '  Use Blade with CakePHP, WordPress, SlimPHP, or CodeIgniter — modernize legacy projects and improve developer experience without Laravel.'
+                        ]
+
+                    ];
+                @endphp
+
+                @foreach ($features as $feature)
+                    <div class="border border-brand-200 rounded-xl p-7 hover:border-brand-300 transition-colors bg-white">
+                        <div class="w-10 h-10 bg-brand-900 rounded-lg flex items-center justify-center mb-5">
+                            <span class="text-white text-sm font-bold">{{$feature['icon']}}</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-brand-900">{{$feature['title']}}</h3>
+                        <p class="mt-2 text-sm text-brand-500 leading-relaxed">{{ $feature['description'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="https://www.zend.com/blog/php-migration-trends" target="_blank" rel="noopener noreferrer"
+                    class="text-xs text-brand-400 hover:text-brand-600 transition-colors underline underline-offset-2">
+                    Source: PHP Migration Trends —Zend
+                </a>
+            </div>
+        </x-container>
+    </x-section>
+
+    <x-section class="bg-brand-50">
+        <x-container class="text-center">
+            <h2 class="text-3xl font-bold text-brand-900 tracking-tight">Ready to use Blade anywhere?</h2>
+            <p class="mt-4 text-brand-500 max-w-lg mx-auto">Start building with modern, expressive templates in your
+                existing PHP project today.</p>
+            <div class="mt-8 flex items-center justify-center gap-4 flex-wrap">
+                <a href="https://katanaphp.dev/docs"
+                    class="inline-flex items-center px-6 py-3 bg-brand-900 text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors">
+                    <i class="fa-regular fa-book mr-2"></i>View Documentation
+                </a>
+                <a href="https://github.com/katanaphp"
+                    class="inline-flex items-center px-6 py-3 border border-brand-300 text-brand-700 text-sm font-medium rounded-lg hover:bg-brand-100 transition-colors">
+                    <i class="fa-brands fa-github mr-2"></i>View on GitHub
+                </a>
+            </div>
+        </x-container>
+    </x-section>
+
+    <footer class="border-t border-brand-200 bg-white py-8">
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between text-sm text-brand-400">
+            <span>Katana &copy; {{date('Y')}}</span>
+            <a href="https://github.com/katanaphp" class="hover:text-brand-900 transition-colors">
+                <i class="fa-brands fa-github text-lg"></i>
+            </a>
+        </div>
+    </footer>
 </x-layout>
