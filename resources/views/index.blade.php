@@ -14,8 +14,9 @@
                 <a href="https://katanaphp.dev/docs"
                     class="text-sm text-brand-500 hover:text-brand-900 transition-colors">Docs</a>
                 <a href="https://github.com/katanaphp"
-                    class="text-sm text-brand-500 hover:text-brand-900 transition-colors"><i
-                        class="fa-brands fa-github mr-1"></i>GitHub</a>
+                    class="text-sm text-brand-500 hover:text-brand-900 transition-colors">
+                    <x-icon type="brands" icon="github" class="mr-1" /> GitHub
+                </a>
             </div>
         </div>
     </nav>
@@ -32,11 +33,11 @@
             <div class="mt-10 flex items-center justify-center gap-4 flex-wrap">
                 <a href="https://katanaphp.dev/docs"
                     class="inline-flex items-center px-6 py-3 bg-brand-900 text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors">
-                    <i class="fa-regular fa-book mr-2"></i>View Documentation
+                    <x-icon icon="book" class="mr-4" />View Documentation
                 </a>
                 <a href="https://github.com/katanaphp"
                     class="inline-flex items-center px-6 py-3 border border-brand-300 text-brand-700 text-sm font-medium rounded-lg hover:bg-brand-100 transition-colors">
-                    <i class="fa-brands fa-github mr-2"></i>View on GitHub
+                    <x-icon type="brands" icon="github" class="mr-4 w-4.5" />View on GitHub
                 </a>
             </div>
         </x-container>
@@ -52,34 +53,52 @@
                 @php
                     $features = [
                         [
-                            'icon' => '8x',
+                            'icon' => [
+                                'type' => 'solid',
+                                'icon' => 'circle-check',
+                            ],
                             'title' => 'Wide PHP Support',
                             'description' => 'Supports all PHP 8.x versions used on approximately 77% of all deployments, making it easier to adopt in both new and legacy projects.'
                         ],
                         [
-                            'icon' => 'fa-solid fa-vial',
+                            'icon' => [
+                                'type' => 'solid',
+                                'icon' => 'flask'
+                            ],
                             'title' => 'Extensively Tested',
                             'description' => 'Large test suite with end-to-end tests verifying actual HTML output at 95% coverage.',
                         ],
                         [
-                            'icon' => 'fa-solid fa-feather',
-                            'title' => '<10 KB',
+                            'icon' => [
+                                'type' => 'solid',
+                                'icon' => 'feather',
+                            ],
+                            'title' => 'Light weight',
                             'description' => 'A lightweight, fully independent implementation of Blade with zero dependencies on Laravel.'
                         ],
                         [
-                            'icon' => 'fa-solid fa-code',
+                            'icon' => [
+                                'type' => 'solid',
+                                'icon' => 'code',
+                            ],
                             'title' => 'Full Laravel Parity',
                             'description' => 'Same directives, components, and interface as Laravel Blade so you can port code to and from Laravel effortlessly.'
                         ],
                         [
-                            'icon' => 'fa-solid fa-shield-halved',
+                            'icon' => [
+                                'type' => 'solid',
+                                'icon' => 'shield-halved',
+                            ],
                             'title' => 'Actively Maintained',
                             'description' => 'The only independent Blade implementation actively maintained as of 2025.'
                         ],
                         [
-                            'icon' => 'fa-solid fa-bolt',
+                            'icon' => [
+                                'type' => 'solid',
+                                'icon' => 'bolt'
+                            ],
                             'title' => 'Blade Anywhere',
-                            'description' => '  Use Blade with CakePHP, WordPress, SlimPHP, or CodeIgniter — modernize legacy projects and improve developer experience without Laravel.'
+                            'description' => '  Use Blade with CakePHP, WordPress, SlimPHP, or CodeIgnite; modernize legacy projects and improve developer experience without Laravel.'
                         ]
 
                     ];
@@ -87,8 +106,8 @@
 
                 @foreach ($features as $feature)
                     <div class="border border-brand-200 rounded-xl p-7 hover:border-brand-300 transition-colors bg-white">
-                        <div class="w-10 h-10 bg-brand-900 rounded-lg flex items-center justify-center mb-5">
-                            <span class="text-white text-sm font-bold">{{$feature['icon']}}</span>
+                        <div class="w-10 h-10 text-white bg-brand-900 rounded-lg flex items-center justify-center mb-5">
+                            <x-icon :icon="$feature['icon']['icon']" :type="$feature['icon']['type']" />
                         </div>
                         <h3 class="text-lg font-semibold text-brand-900">{{$feature['title']}}</h3>
                         <p class="mt-2 text-sm text-brand-500 leading-relaxed">{{ $feature['description'] }}</p>
@@ -113,11 +132,11 @@
             <div class="mt-8 flex items-center justify-center gap-4 flex-wrap">
                 <a href="https://katanaphp.dev/docs"
                     class="inline-flex items-center px-6 py-3 bg-brand-900 text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors">
-                    <i class="fa-regular fa-book mr-2"></i>View Documentation
+                    <x-icon type="solid" icon="book" class="mr-3" />View Documentation
                 </a>
                 <a href="https://github.com/katanaphp"
                     class="inline-flex items-center px-6 py-3 border border-brand-300 text-brand-700 text-sm font-medium rounded-lg hover:bg-brand-100 transition-colors">
-                    <i class="fa-brands fa-github mr-2"></i>View on GitHub
+                    <x-icon type="brands" icon="github" class="mr-3" />View on GitHub
                 </a>
             </div>
         </x-container>
@@ -127,7 +146,7 @@
         <div class="max-w-6xl mx-auto px-6 flex items-center justify-between text-sm text-brand-400">
             <span>Katana &copy; {{date('Y')}}</span>
             <a href="https://github.com/katanaphp" class="hover:text-brand-900 transition-colors">
-                <i class="fa-brands fa-github text-lg"></i>
+                <x-icon type="brands" icon="github" />
             </a>
         </div>
     </footer>
