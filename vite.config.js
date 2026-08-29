@@ -5,6 +5,7 @@ export default {
     server: {
         origin: 'http://localhost:5173',
         cors: true,
+        host: '0.0.0.0'
     },
     build: {
         manifest: true,
