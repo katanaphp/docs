@@ -26,7 +26,6 @@ class Document
 
         $environment->addExtension(new CommonMarkCoreExtension);
         $environment->addExtension(new GithubFlavoredMarkdownExtension);
-        $environment->addExtension(new HeadingPermalinkExtension);
 
         $environment->addEventListener(DocumentParsedEvent::class, $this->generateTableOfContents(...));
 
