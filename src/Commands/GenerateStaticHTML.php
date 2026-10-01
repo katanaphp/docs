@@ -14,6 +14,10 @@ class GenerateStaticHTML extends Command
     {
         $outputDir = ROOT_DIR . '/dist';
 
+        if (!is_dir($outputDir) && !mkdir($outputDir)) {
+            return Command::FAILURE;
+        }
+
         $routes = Route::all();
 
 
