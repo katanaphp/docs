@@ -18,7 +18,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "soysudhanshu/katana": "dev-master",
+        "katanaphp/blade": "dev-master",
         "league/commonmark": "^2.8",
         "symfony/console": "^8.1"
     },
