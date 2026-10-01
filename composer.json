@@ -3,6 +3,12 @@
     "description": "Documentation for Katana Template Engine",
     "type": "project",
     "license": "MIT",
+    "scripts": {
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npm run dev"
+        ]
+    },
     "autoload": {
         "psr-4": {
             "App\\": "./src"
