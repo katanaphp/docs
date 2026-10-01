@@ -7,6 +7,14 @@
         "dev": [
             "Composer\\Config::disableProcessTimeout",
             "npm run dev"
+        ],
+        "build": [
+            "npm run build",
+            "php ./cli build:generate-html"
+        ],
+        "preview": [
+            "@build",
+            "cd dist && php -S 0.0.0.0:8999"
         ]
     },
     "autoload": {
