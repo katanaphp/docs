@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently 'php -S 0.0.0.0:8080 -t . ./web/index.php' 'vite'",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
