@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Dom\HTMLDocument;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Event\DocumentParsedEvent;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
@@ -20,6 +21,8 @@ class Document
 
     public protected(set) array $tableOfContents = [];
 
+    public readonly string $title;
+
     public function __construct(protected readonly string $markdown)
     {
         $environment = new Environment([]);
@@ -32,6 +35,8 @@ class Document
         $this->converter = new MarkdownConverter($environment);
 
         $this->content = $this->converter->convert($this->markdown);
+
+        $this->title = (HTMLDocument::createFromString($this->content))->querySelector('h1')->textContent;
     }
 
     protected function generateTableOfContents(DocumentParsedEvent $event)
