@@ -17,6 +17,8 @@
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" class="text-xl font-bold text-brand-900 tracking-tight">Katana</a>
             <div class="flex items-center gap-6">
+                <a href="/releases"
+                    class="text-sm text-brand-500 hover:text-brand-900 transition-colors">Releases</a>
                 <a href="https://katanaphp.dev/docs"
                     class="text-sm text-brand-500 hover:text-brand-900 transition-colors">Docs</a>
                 <a href="https://github.com/katanaphp"
