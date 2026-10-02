@@ -19,8 +19,8 @@
             <div class="flex items-center gap-6">
                 <a href="/releases"
                     class="text-sm text-brand-500 hover:text-brand-900 transition-colors">Releases</a>
-                <a href="https://katanaphp.dev/docs"
-                    class="text-sm text-brand-500 hover:text-brand-900 transition-colors">Docs</a>
+                {{-- <a href="https://katanaphp.dev/docs"
+                    class="text-sm text-brand-500 hover:text-brand-900 transition-colors">Docs</a> --}}
                 <a href="https://github.com/katanaphp"
                     class="text-sm text-brand-500 hover:text-brand-900 transition-colors">
                     <x-icon type="brands" icon="github" class="mr-1" /> GitHub

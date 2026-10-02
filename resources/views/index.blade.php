@@ -19,10 +19,10 @@
                 Blade templates in any PHP project.
             </p>
             <div class="mt-10 flex items-center justify-center gap-4 flex-wrap">
-                <a href="https://katanaphp.dev/docs"
+                {{-- <a href="https://katanaphp.dev/docs"
                     class="inline-flex items-center px-6 py-3 bg-brand-900 text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors">
                     <x-icon icon="book" class="mr-4" />View Documentation
-                </a>
+                </a> --}}
                 <a href="https://github.com/katanaphp"
                     class="inline-flex items-center px-6 py-3 border border-brand-300 text-brand-700 text-sm font-medium rounded-lg hover:bg-brand-100 transition-colors">
                     <x-icon type="brands" icon="github" class="mr-4 w-4.5" />View on GitHub
@@ -118,10 +118,10 @@
             <p class="mt-4 text-brand-500 max-w-lg mx-auto">Start building with modern, expressive templates in your
                 existing PHP project today.</p>
             <div class="mt-8 flex items-center justify-center gap-4 flex-wrap">
-                <a href="https://katanaphp.dev/docs"
+                {{-- <a href="https://katanaphp.dev/docs"
                     class="inline-flex items-center px-6 py-3 bg-brand-900 text-white text-sm font-medium rounded-lg hover:bg-brand-800 transition-colors">
                     <x-icon type="solid" icon="book" class="mr-3" />View Documentation
-                </a>
+                </a> --}}
                 <a href="https://github.com/katanaphp"
                     class="inline-flex items-center px-6 py-3 border border-brand-300 text-brand-700 text-sm font-medium rounded-lg hover:bg-brand-100 transition-colors">
                     <x-icon type="brands" icon="github" class="mr-3" />View on GitHub
