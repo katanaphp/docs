@@ -9,12 +9,13 @@
             "npm run dev"
         ],
         "build": [
+            "rm -rf ./dist",
             "npm run build",
             "php ./cli build:generate-html"
         ],
         "preview": [
             "@build",
-            "cd dist && php -S 0.0.0.0:8999"
+            "npm run wrangler dev"
         ]
     },
     "autoload": {

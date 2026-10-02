@@ -5,12 +5,13 @@ namespace App\Commands;
 use App\Route;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand('build:generate-html')]
 class GenerateStaticHTML extends Command
 {
 
-    public function __invoke(): int
+    public function __invoke(OutputInterface $output): int
     {
         $outputDir = ROOT_DIR . '/dist';
 
@@ -23,13 +24,15 @@ class GenerateStaticHTML extends Command
 
         foreach ($routes as $url => $callback) {
             $path = $url;
-            if ($path === '/' || empty($path)) {
-                $path = 'index.html';
+
+            $subDirectory = sprintf("%s/%s", $outputDir, $path);
+
+            if (!is_dir($subDirectory) && !mkdir($subDirectory, recursive: true)) {
+                $output->write('Unable to create sub directories');
+                return Command::FAILURE;
             }
 
-            $filePath = sprintf("%s/%s", $outputDir, $path);
-
-            file_put_contents($filePath, $callback());
+            file_put_contents("{$subDirectory}/index.html", $callback());
         }
 
 
