@@ -7,19 +7,7 @@
     ];
 @endphp
 <x-layout class="max-w-full!" title="Katana">
-    <nav class="w-full border-b border-brand-200 bg-white">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="text-xl font-bold text-brand-900 tracking-tight">Katana</a>
-            <div class="flex items-center gap-6">
-                <a href="https://katanaphp.dev/docs"
-                    class="text-sm text-brand-500 hover:text-brand-900 transition-colors">Docs</a>
-                <a href="https://github.com/katanaphp"
-                    class="text-sm text-brand-500 hover:text-brand-900 transition-colors">
-                    <x-icon type="brands" icon="github" class="mr-1" /> GitHub
-                </a>
-            </div>
-        </div>
-    </nav>
+
 
     <x-section class="bg-brand-50">
         <x-container class="text-center">
@@ -142,12 +130,4 @@
         </x-container>
     </x-section>
 
-    <footer class="border-t border-brand-200 bg-white py-8">
-        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between text-sm text-brand-400">
-            <span>Katana &copy; {{date('Y')}}</span>
-            <a href="https://github.com/katanaphp" class="hover:text-brand-900 transition-colors">
-                <x-icon type="brands" icon="github" />
-            </a>
-        </div>
-    </footer>
 </x-layout>
