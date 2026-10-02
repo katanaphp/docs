@@ -16,6 +16,10 @@
         "preview": [
             "@build",
             "npm run wrangler dev"
+        ],
+        "deploy": [
+            "@build",
+            "npm run wrangler deploy"
         ]
     },
     "autoload": {
